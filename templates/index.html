@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Sontok.kr - GPT 선톡 분석기</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 20px; background: #f9f9f9; }
+        h1 { color: #333; }
+        label { display: block; margin-top: 20px; }
+        textarea { width: 100%; height: 200px; margin-top: 10px; }
+        select, button { margin-top: 10px; padding: 10px; width: 100%; }
+        .result { margin-top: 40px; padding: 20px; background: #fff; border-radius: 5px; border: 1px solid #ccc; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>🧠 Sontok.kr - GPT 선톡 타이밍 분석</h1>
+    <form method="post">
+        <label for="chat_text">📩 최근 카카오톡 대화 내용을 붙여넣어주세요:</label>
+        <textarea id="chat_text" name="chat_text" required></textarea>
+
+        <label for="role">🤖 AI 역할을 선택하세요:</label>
+        <select id="role" name="role" required>
+            <option value="연애 고수 친구">연애 고수 친구</option>
+            <option value="진지한 상담가">진지한 상담가</option>
+            <option value="장난기 있는 절친">장난기 있는 절친</option>
+            <option value="무심한 회사 동료">무심한 회사 동료</option>
+        </select>
+
+        <button type="submit">GPT에게 물어보기</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>📋 GPT 분석 결과</h2>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+</body>
+</html>
